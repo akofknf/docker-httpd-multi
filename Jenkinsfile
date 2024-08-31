@@ -12,9 +12,9 @@ pipeline {
 		stage ("master") {
 			steps {
 
-				sh "docker run -itdp 8080:80 --name server-1 httpd"
-				sh "echo 'This is master page from docker' > /home/ec2-user/index.html"
-				sh "docker cp /home/ec2-user/index.html server-1:/usr/local/apache2/htdocs/"
+				sh "docker run -itdp 8080:80 --name server-2 httpd"
+				sh "sudo echo 'This is master page from docker' > /mnt/docker-pipeline/index.html"
+				sh "docker cp /mnt/docker-pipeline/index.html server-1:/usr/local/apache2/htdocs"
 			}
 
 		}
