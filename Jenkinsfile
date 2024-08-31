@@ -9,7 +9,7 @@ pipeline {
 	}
 	stages {
 
-		stage ("master") {
+		stage ("QA1") {
 			steps {
 
 				sh "docker run -itdp 8081:80 --name server-2 httpd"
